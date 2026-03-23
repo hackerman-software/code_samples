@@ -7,12 +7,12 @@ You can make words *bold*, /italic/, _underlined_, +strike+, =verbatim=, and ~co
 
 * Headline 1
 
-The /beauty/ of Hackerman Text *must* be experienced: [[https://hackerman.ai#download]]
+The /beauty/ of Hackerman Text *must* be experienced: [[https://hackerman.ai]]
 
 ** Sub-headline
 
-Quick links to open local files: [[file:test.py][test]]
-Or run command in Terminal: [[sh:ls][ls]]
+Quick links to open local files: [[file: test.py]]
+Or run command in Terminal: [[sh: ls]]
 
 ** TODO
 
