@@ -5,54 +5,89 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Syntax Highlighter Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern HTML Syntax Test</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #1f2937;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, sans-serif;
+            background: linear-gradient(180deg, #020617, #0f172a);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+        .card {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+        p { color: var(--muted); }
+        button {
+            margin-top: 16px;
+            padding: 10px 16px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #082f49;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { filter: brightness(1.08); }
+        .output {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-left: 3px solid var(--accent);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            color: var(--text);
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Highlighting Test for Multiple Embedded Languages</h1>
+    <main class="container">
+        <section class="card">
+            <h1>Modern HTML Syntax Test</h1>
+            <p>This example uses semantic HTML with embedded CSS and JavaScript only.</p>
 
-    <!-- Embedded JavaScript -->
+            <button id="greetButton" type="button">Click to Greet</button>
+            <div id="output" class="output">Waiting for interaction...</div>
+        </section>
+    </main>
+
     <script>
+        const button = document.getElementById("greetButton");
+        const output = document.getElementById("output");
+
         function greet(name) {
-            console.log("Hello, " + name + "!");
+            return `Hello, ${name}!`;
         }
-        greet("World");
+
+        button.addEventListener("click", () => {
+            const now = new Date().toLocaleTimeString();
+            output.textContent = `${greet("World")} Current time: ${now}`;
+        });
     </script>
 
-    <!-- Classic ASP using JavaScript -->
-    <script language="javascript" runat="server">
-        var user = "ASP User";
-        Response.Write("Welcome, " + user);
-    </script>
-
-    <!-- Embedded Python (for templating engines like Jinja2, Django) -->
-    <div>
-        {% if user %}
-            <p>Hello {{ user }}</p>
-        {% else %}
-            <p>Hello guest</p>
-        {% endif %}
-    </div>
-
-    <!-- Embedded SGML example -->
-    <!--!ELEMENT greeting (#PCDATA) -->
-    <!--!ATTLIST greeting lang CDATA #IMPLIED -->
-
-    <!-- Embedded VBScript -->
-    <script language="VBScript">
-        Dim message
-        message = "Hello from VBScript"
-        MsgBox message
-    </script>
-
-    <!-- Embedded PHP -->
-    <?php
-        $name = "PHP User";
-        echo "<p>Hello, $name</p>";
-    ?>
-
-    <footer>
-        <p>© 2025 Multi-Language Syntax Test</p>
-    </footer>
 </body>
 </html>
