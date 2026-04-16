@@ -1,0 +1,226 @@
+
+//
+//
+/*a*/
+
+/* outer /* inner */ outer */
+
+"a"
+"a\"b"
+'b'
+'\n'
+
+r"raw"
+r#"raw"#
+r##"raw"##
+br"raw"
+br#"raw"#
+
+#
+#!
+#[
+#![allow(unused)]
+#[derive(Debug)]
+
+:
+::
+->
+
+.
+..
+...
+
+0
+0.
+0..1
+0xFF
+0b1010
+1.0e-3
+
+foo
+foo()
+foo!(
+foo.bar
+foo::bar
+
+'a
+'static
+'_
+&'a str
+&'static str
+&'_ str
+
+true
+false
+None
+
+i8
+i16
+i32
+i64
+i128
+isize
+u8
+u16
+u32
+u64
+u128
+usize
+f32
+f64
+bool
+char
+str
+
+let x = 123;
+let y = 0..10;
+let z = 1.0e-3;
+
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+fn square(x: f32) -> f32 {
+    x * x
+}
+
+fn borrow<'a>(s: &'a str) -> &'a str {
+    s
+}
+
+fn pick_first<'a>(a: &'a str, b: &'a str) -> &'a str {
+    a
+}
+
+fn use_static(s: &'static str) -> &'static str {
+    s
+}
+
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+struct Borrowed<'a> {
+    name: &'a str,
+}
+
+enum Color {
+    Red,
+    Green,
+    Blue,
+}
+
+union Value {
+    i: i32,
+    f: f32,
+}
+
+trait Draw {
+    fn draw(&self);
+}
+
+trait AsStr<'a> {
+    fn as_str(&'a self) -> &'a str;
+}
+
+impl Point {
+    fn new(x: i32, y: i32) -> Self {
+        Self { x, y }
+    }
+
+    fn sum(&self) -> i32 {
+        self.x + self.y
+    }
+}
+
+impl<'a> Borrowed<'a> {
+    fn new(name: &'a str) -> Self {
+        Self { name }
+    }
+}
+
+fn main() {
+    let p = Point::new(1, 2);
+    let arr = [1, 2, 3];
+
+    if true {
+        println!("hello");
+    } else {
+        println!("nope");
+    }
+
+    for i in 0..10 {
+        println!("{}", i);
+    }
+
+    let value = Some(1);
+    let result = match value {
+        Some(v) => v,
+        None => 0,
+    };
+
+    let text: &'static str = "hello";
+    let borrowed = borrow(text);
+    let holder = Borrowed::new(borrowed);
+
+    println!("{}", result);
+    println!("{}", holder.name);
+}
+
+macro_rules! my_macro {
+    ($name:ident) => {
+        println!("{}", $name);
+    };
+}
+
+const fn add_one(x: i32) -> i32 {
+    x + 1
+}
+
+async fn fetch() -> Result<(), &'static str> {
+    Ok(())
+}
+
+unsafe fn raw(ptr: *const i32) -> i32 {
+    *ptr
+}
+
+extern "C" fn c_fn(x: i32) -> i32 {
+    x
+}
+
+type Alias<'a> = &'a str;
+
+where_fn::<i32>();
+
+fn where_fn<T>()
+where
+    T: Copy + Send,
+{
+}
+
+let_closure: fn(i32) -> i32 = add_one;
+
+let tuple = (1, "x", true);
+let array = [1, 2, 3];
+let slice: &[i32] = &array;
+let bytes: &[u8] = b"abc";
+let chars = ['a', 'b', 'c'];
+
+let option = Some(1);
+let result2: Result<i32, &'static str> = Ok(1);
+
+let ref_pattern = &Some(3);
+if let Some(v) = option {
+    println!("{}", v);
+}
+
+while false {
+    break;
+}
+
+loop {
+    break;
+}
+
