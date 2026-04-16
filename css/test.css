@@ -1,0 +1,128 @@
+
+/* comment */
+/*a*/
+
+"a"
+'a'
+"url(x)"
+'url(x)'
+
+@
+@media screen and (min-width: 768px) {}
+@supports (display: grid) {}
+@keyframes fade {}
+
+:
+::
+;
+
+.
+..
+...
+
+#
+#id
+#abc123
+
+*
+>
++
+~
+||
+=
+
+0
+0.
+0..1
+10px
+1.5rem
+100%
+1s
+45deg
+#fff
+#ffcc00
+rgb(255, 0, 0)
+rgba(0, 0, 0, 0.5)
+hsl(200, 50%, 50%)
+var(--gap)
+
+foo
+foo(
+--main-color
+--gap
+
+color
+background
+display
+position
+margin
+padding
+font-size
+grid-template-columns
+
+.class
+#header
+div
+div.class
+div#id
+div > span
+a:hover
+input:focus
+.card::before
+
+:root {
+    --main-color: #ffcc00;
+    --gap: 1rem;
+}
+
+body {
+    margin: 0;
+    color: #222;
+    background: white;
+    font-family: system-ui, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--gap);
+    padding: 16px;
+}
+
+.card {
+    background: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    transition: transform 0.2s ease, opacity 1s linear;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.card::before {
+    content: "new";
+    color: var(--main-color);
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
