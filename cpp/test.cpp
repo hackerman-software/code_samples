@@ -44,7 +44,6 @@ double
 void
 bool
 size_t
-std
 
 true
 false
