@@ -1,7 +1,7 @@
 
-#+title: Org Mode Feature Showcase
-#+subtitle: Native syntax test file for Hackerman Text
-#+author: Michael
+#+title: Org Test File
+#+subtitle: Syntax test for Hackerman Text's Org lexer
+#+author: @asyncze
 #+date: 2026-04-17
 #+startup: overview
 #+options: toc:2 num:nil
