@@ -1,4 +1,3 @@
-
 #!/usr/bin/env node
 
 // line comment
