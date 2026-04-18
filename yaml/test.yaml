@@ -1,0 +1,102 @@
+
+# YAML test file for Hackerman Text
+
+name: Hackerman Text
+version: 0.1
+enabled: true
+debug: false
+mode: null
+empty: ~
+
+numbers:
+  int: 123
+  float: 3.14
+  exp: 1.0e-3
+  hex_like: "0xFF"
+  binary_like: "0b1010"
+
+strings:
+  plain: hello
+  double: "hello world"
+  escaped: "line 1\nline 2"
+  single: 'it''s fine'
+
+list:
+  - one
+  - two
+  - 123
+  - true
+  - "quoted"
+
+nested:
+  user:
+    name: Alice
+    age: 30
+    active: true
+  paths:
+    - /tmp
+    - /var/log
+    - C:\Users\me
+
+mapping_list:
+  - name: Alice
+    role: admin
+  - name: Bob
+    role: user
+
+block_literal: |
+  line one
+  line two
+  line three
+
+block_folded: >
+  this is a folded
+  block scalar that
+  should look string-like
+
+mixed:
+  key1: value1
+  key2:
+    child1: yes
+    child2: no
+    child3:
+      - a
+      - b
+      - c
+
+anchors:
+  defaults: &default-service
+    image: nginx:latest
+    restart: always
+    ports:
+      - "80:80"
+
+  service_a:
+    <<: *default-service
+    container_name: service-a
+
+  service_b:
+    <<: *default-service
+    container_name: service-b
+
+aliases:
+  primary-network: &bridge-network bridge
+  selected-network: *bridge-network
+
+tags:
+  string_value: !!str 123
+  int_value: !!int "123"
+  seq_value: !!seq [a, b, c]
+  map_value: !!map {name: Alice, role: admin}
+  custom_tag: !CustomType
+    id: 1
+    name: tagged
+
+flow:
+  array: [one, two, three]
+  object: {name: Alice, active: true, role: admin}
+
+comment_test: value # inline comment
+
+# end
+
