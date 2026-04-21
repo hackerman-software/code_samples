@@ -134,58 +134,78 @@ This section contains a drawer above and normal text below.
 * Blocks
 
 ** Quote block
+
 #+begin_quote
+
 Org mode is one of those formats that scales from a quick note
 to a full publishing workflow without feeling heavy.
+
 #+end_quote
 
 ** Example block
+
 #+begin_example
+
 $ hackerman notes.org
 Opening file...
 Lexer: org
 Fold headers: enabled
+
 #+end_example
 
 ** Center block
+
 #+begin_center
+
 Centered text block test
+
 #+end_center
 
 ** Comment block
+
 #+begin_comment
+
 This block should usually be visually distinct but not noisy.
+
 #+end_comment
 
 ** Source blocks
 
-#+begin_src python :results output :exports both
+#+begin_src python
+
 name = "Michael"
 print(f"Hello from Python, {name}.")
+
 #+end_src
 
-#+RESULTS:
+#+RESULTS: True
 : Hello from Python, Michael.
 
 #+begin_src javascript :results output :exports both
+
 const name = "Michael";
 console.log(`Hello from JavaScript, ${name}.`);
+
 #+end_src
 
-#+RESULTS:
+#+RESULTS: True
 : Hello from JavaScript, Michael.
 
 #+begin_src lua :results output :exports both
+
 local name = "Michael"
 print("Hello from Lua, " .. name .. ".")
+
 #+end_src
 
-#+RESULTS:
+#+RESULTS: True
 : Hello from Lua, Michael.
 
 #+begin_src bash :results output :exports both
+
 echo "Hello from Bash."
 pwd
+
 #+end_src
 
 #+RESULTS:
@@ -195,6 +215,7 @@ pwd
 * Drawers and logbook
 
 ** TODO Review lexer colors
+
 :LOGBOOK:
 - State "TODO"       from              [2026-04-17 Fri 15:00]
 :END:
